@@ -4,13 +4,23 @@ using System.Collections;
 public class playerControl2 : MonoBehaviour {
 
     public GameObject cam;
+    public Camera camera;
+
+    public float currentSpeed = 8.0f;
+    public float fullSpeed = 8.0f;
+    public float slowSpeed = 3.0f;
     public float speed = 8.0f;
+
     float rotSpeed = 100.0f;
+
     bool camToggleOn = false;
+
+    public Rigidbody2D rb;
 
 	// Use this for initialization
 	void Start () {
-
+        rb = GetComponent<Rigidbody2D>();
+        camera = GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
@@ -22,22 +32,22 @@ public class playerControl2 : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 3.0f;
+            currentSpeed = slowSpeed;
             print("lshift was pressed");
         }
         else
         {
-            speed = 8.0f;
+            currentSpeed = fullSpeed;
         }
 
 
         if (Input.GetKeyDown(KeyCode.Space) && !camToggleOn) {
-            cam.transform.Translate(Vector2.up * 5, Space.Self);
+            cam.transform.Translate(Vector2.up * 4, Space.Self);
             camToggleOn = true;
             print("space key was pressed");
         }
         else if (Input.GetKeyDown(KeyCode.Space) && camToggleOn) {
-            cam.transform.Translate(Vector2.up * -5, Space.Self);
+            cam.transform.Translate(Vector2.up * -4, Space.Self);
             camToggleOn = false;
             print("space key was pressed");
         }
@@ -57,8 +67,20 @@ public class playerControl2 : MonoBehaviour {
         Vector2 toMove = new Vector2(horizontalInput, verticalInput);
         toMove.Normalize();
 
-        //transform.Translate(new Vector2(horizontalInput, verticalInput) * speed * Time.deltaTime, Space.Self);
-        transform.Translate(new Vector2(toMove.x, toMove.y) * speed * Time.deltaTime, Space.Self);
+        //transform.Translate(new Vector2(horizontalInput, verticalInput) * currentSpeed * Time.deltaTime, Space.Self);
+        transform.Translate(new Vector2(toMove.x, toMove.y) * currentSpeed * Time.deltaTime, Space.Self);
+
+        //rb.MovePosition(rb.position + toMove * currentSpeed * Time.deltaTime);
 
     }
+
+
+
+    void FixedUpdate()
+    {
+        
+    }
+
+
+
 }
