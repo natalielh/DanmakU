@@ -4,7 +4,7 @@ using System.Collections;
 public class playerControl2 : MonoBehaviour {
 
     public GameObject cam;
-    public Camera camera;
+    //public Camera camera;
 
     public float currentSpeed = 8.0f;
     public float fullSpeed = 8.0f;
@@ -20,7 +20,7 @@ public class playerControl2 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
-        camera = GetComponent<Camera>();
+        //camera = GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame

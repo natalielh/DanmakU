@@ -3,7 +3,9 @@ using System.Collections;
 
 public class playerFlip2 : MonoBehaviour {
 
-	public float playerPos;
+    public Camera cam;
+
+    public float playerPos;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +17,12 @@ public class playerFlip2 : MonoBehaviour {
 
 		//Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos = Input.mousePosition;
-        Vector2 thisPos = Camera.main.WorldToScreenPoint(transform.position);
+
+        //Use this one for FX
+        Vector2 thisPos = cam.WorldToScreenPoint(transform.position);
+
+        //This one works when FX is not used
+        //Vector2 thisPos = Camera.main.WorldToScreenPoint(transform.position);
 
         //if (mousePos.x < transform.position.x) {
         if (mousePos.x < thisPos.x)
