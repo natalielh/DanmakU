@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 16
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -26542,7 +26542,7 @@ MonoBehaviour:
   LumaSharpen: 1
   QuantizeRGB: 1
   RBits: 3
-  GBits: 3
+  GBits: 2
   BBits: 3
   EnableBurstCountAnimation: 1
   AntiFlicker: 1
@@ -26880,7 +26880,7 @@ MonoBehaviour:
   Sprite: {fileID: 21300028, guid: 7c28fb4bd969e6249bc292fbad9e5a0a, type: 3}
   ColliderRadius: 0.5
   ColliderOffset: {x: 0, y: 0}
-  DefaultPoolSize: 128000
+  DefaultPoolSize: 10000
 --- !u!114 &603929488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26961,7 +26961,7 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 5bc83d491e7176744be32164607b0414, type: 3}
   ColliderRadius: 0.5
   ColliderOffset: {x: 0, y: 0}
-  DefaultPoolSize: 128000
+  DefaultPoolSize: 1000
 --- !u!4 &652176642
 Transform:
   m_ObjectHideFlags: 0
@@ -27937,7 +27937,7 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 7c28fb4bd969e6249bc292fbad9e5a0a, type: 3}
   ColliderRadius: 0.5
   ColliderOffset: {x: 0, y: 0}
-  DefaultPoolSize: 128000
+  DefaultPoolSize: 10000
 --- !u!114 &800182650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29483,11 +29483,11 @@ MonoBehaviour:
 
     [Shift] Slow
 
-    [Space] Center
+    [C] Center
 
-    [P] Old TV FX
+    [P] Old TV
 
-    Version: Alpha'
+    Version: 0.1.0a'
 --- !u!222 &1465222699
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29779,7 +29779,7 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 365b83b8c5ec3d344a4031c3d69ae585, type: 3}
   ColliderRadius: 0.5
   ColliderOffset: {x: 0, y: 0}
-  DefaultPoolSize: 128000
+  DefaultPoolSize: 10000
 --- !u!4 &1580525884
 Transform:
   m_ObjectHideFlags: 0
@@ -40173,7 +40173,7 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 46466f5277f8a514186064d9b4a5c1cb, type: 3}
   ColliderRadius: 0.5
   ColliderOffset: {x: 0, y: 0}
-  DefaultPoolSize: 128000
+  DefaultPoolSize: 10000
 --- !u!4 &2040105327
 Transform:
   m_ObjectHideFlags: 0
@@ -40379,3 +40379,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 367212999}
+--- !u!1 &2140682124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140682126}
+  - component: {fileID: 2140682125}
+  m_Layer: 0
+  m_Name: '## GameSettingsManager ##'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2140682125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140682124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b45852dda9d6d7418b19a60feb51921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2140682126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140682124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.88387233, y: -3.7709842, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
