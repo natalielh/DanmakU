@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using JetFistGames.RetroTVFX;
+
 public class playerControl2 : MonoBehaviour {
 
     public GameObject cam;
     //public Camera camera;
+
+    public GameObject fxcam;
 
     public float currentSpeed = 8.0f;
     public float fullSpeed = 8.0f;
@@ -14,13 +18,17 @@ public class playerControl2 : MonoBehaviour {
     float rotSpeed = 100.0f;
 
     bool camToggleOn = false;
+    bool fxToggleOn = true;
 
     public Rigidbody2D rb;
+    private CRTEffect crtfx;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+
         rb = GetComponent<Rigidbody2D>();
         //camera = GetComponent<Camera>();
+        crtfx = fxcam.GetComponent<CRTEffect>();
 	}
 	
 	// Update is called once per frame
@@ -41,15 +49,31 @@ public class playerControl2 : MonoBehaviour {
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && !camToggleOn) {
+
+
+        if (Input.GetKeyDown(KeyCode.C) && !camToggleOn) {
             cam.transform.Translate(Vector2.up * 4, Space.Self);
             camToggleOn = true;
             print("space key was pressed");
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && camToggleOn) {
+        else if (Input.GetKeyDown(KeyCode.C) && camToggleOn) {
             cam.transform.Translate(Vector2.up * -4, Space.Self);
             camToggleOn = false;
             print("space key was pressed");
+        }
+
+
+
+
+        if (Input.GetKeyDown(KeyCode.P) && !fxToggleOn)
+        {
+            crtfx.enabled = true;
+            fxToggleOn = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.P) && fxToggleOn)
+        {
+            crtfx.enabled = false;
+            fxToggleOn = false;
         }
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -72,13 +96,6 @@ public class playerControl2 : MonoBehaviour {
 
         //rb.MovePosition(rb.position + toMove * currentSpeed * Time.deltaTime);
 
-    }
-
-
-
-    void FixedUpdate()
-    {
-        
     }
 
 

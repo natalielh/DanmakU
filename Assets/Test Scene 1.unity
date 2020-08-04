@@ -26517,7 +26517,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367212991}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e5e2c741e414724bb82e6b18576760a, type: 3}
   m_Name: 
@@ -28531,6 +28531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 872241319}
+  fxcam: {fileID: 367212991}
   currentSpeed: 8
   fullSpeed: 8
   slowSpeed: 2
@@ -28551,7 +28552,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
 --- !u!1 &1014328921
 GameObject:
   m_ObjectHideFlags: 0
@@ -29483,6 +29484,8 @@ MonoBehaviour:
     [Shift] Slow
 
     [Space] Center
+
+    [P] Old TV FX
 
     Version: Alpha'
 --- !u!222 &1465222699
