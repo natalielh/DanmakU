@@ -54,12 +54,12 @@ public class playerControl2 : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.C) && !camToggleOn) {
             cam.transform.Translate(Vector2.up * 4, Space.Self);
             camToggleOn = true;
-            print("space key was pressed");
+            print("c key was pressed");
         }
         else if (Input.GetKeyDown(KeyCode.C) && camToggleOn) {
             cam.transform.Translate(Vector2.up * -4, Space.Self);
             camToggleOn = false;
-            print("space key was pressed");
+            print("c key was pressed");
         }
 
 

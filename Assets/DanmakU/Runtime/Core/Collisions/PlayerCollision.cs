@@ -31,6 +31,11 @@ public class PlayerCollision : MonoBehaviour
     public Sprite ghostSprite;
     private SpriteRenderer spriteRenderer;
 
+    public AudioSource playerHitAudioSource;
+    public AudioSource playerDeathAudioSource;
+    public AudioSource aliveMusicAudioSource;
+    public AudioSource deadMusicAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +65,7 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log(collisionList[0].ToString());
             LoseHealth(1);
             StartCoroutine(BecomeTemporarilyInvincible());
+            playerHitAudioSource.Play();
         }
 
     }
@@ -116,6 +122,9 @@ public class PlayerCollision : MonoBehaviour
             currentHealth = 0;
             // Broadcast some sort of death event here before returning
             Debug.Log("Player died");
+            playerDeathAudioSource.Play();
+            aliveMusicAudioSource.Stop();
+            deadMusicAudioSource.Play();
             //Destroy(player);
 
             deathGraphic.SetActive(true);
