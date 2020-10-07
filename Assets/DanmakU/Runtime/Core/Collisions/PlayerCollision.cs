@@ -51,10 +51,11 @@ public class PlayerCollision : MonoBehaviour
 
         if (currentHealth <= 0)
             if (Input.GetKeyDown(KeyCode.Y)) {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
             else if (Input.GetKeyDown(KeyCode.N)) {
-                Application.Quit();
+                SceneManager.LoadScene(0);
+                //Application.Quit();
             }
     }
 

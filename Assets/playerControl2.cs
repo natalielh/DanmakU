@@ -2,6 +2,7 @@
 using System.Collections;
 
 using JetFistGames.RetroTVFX;
+using DanmakU;
 
 public class playerControl2 : MonoBehaviour {
 
@@ -37,7 +38,7 @@ public class playerControl2 : MonoBehaviour {
         //var move = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
         //transform.position += move * speed * Time.deltaTime;
 
-
+        //slow
         if (Input.GetKey(KeyCode.LeftShift))
         {
             currentSpeed = slowSpeed;
@@ -50,7 +51,7 @@ public class playerControl2 : MonoBehaviour {
 
 
 
-
+        //toggle camera see more
         if (Input.GetKeyDown(KeyCode.C) && !camToggleOn) {
             cam.transform.Translate(Vector2.up * 4, Space.Self);
             camToggleOn = true;
@@ -64,7 +65,7 @@ public class playerControl2 : MonoBehaviour {
 
 
 
-
+        //toggle camera tv fx
         if (Input.GetKeyDown(KeyCode.P) && !fxToggleOn)
         {
             crtfx.enabled = true;
@@ -95,6 +96,11 @@ public class playerControl2 : MonoBehaviour {
         transform.Translate(new Vector2(toMove.x, toMove.y) * currentSpeed * Time.deltaTime, Space.Self);
 
         //rb.MovePosition(rb.position + toMove * currentSpeed * Time.deltaTime);
+
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
 
     }
 
