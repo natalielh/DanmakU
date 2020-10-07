@@ -36,6 +36,8 @@ public class PlayerCollision : MonoBehaviour
     public AudioSource aliveMusicAudioSource;
     public AudioSource deadMusicAudioSource;
 
+    public ParticleSystem bloodParticleSystem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +69,7 @@ public class PlayerCollision : MonoBehaviour
             LoseHealth(1);
             StartCoroutine(BecomeTemporarilyInvincible());
             playerHitAudioSource.Play();
+            bloodParticleSystem.Play();
         }
 
     }
