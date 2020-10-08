@@ -10,6 +10,6 @@ public class EnemyCollision : MonoBehaviour
     {
         EnemyHealth.health -= 1.0f;
         EnemyHitSound.Play();
-        Destroy(collision.gameObject);
+        //Destroy(collision.gameObject);
     }
 }
