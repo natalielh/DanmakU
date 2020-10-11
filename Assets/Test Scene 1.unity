@@ -47614,6 +47614,7 @@ GameObject:
   - component: {fileID: 2140682126}
   - component: {fileID: 2140682125}
   - component: {fileID: 2140682127}
+  - component: {fileID: 2140682128}
   m_Layer: 0
   m_Name: '## GameSettingsManager ##'
   m_TagString: Untagged
@@ -47657,5 +47658,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ab604575767892469d7b599ad12f5a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2140682128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140682124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdc258527f0d444c882c6113c48ad7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

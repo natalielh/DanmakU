@@ -97,11 +97,6 @@ public class playerControl2 : MonoBehaviour {
 
         //rb.MovePosition(rb.position + toMove * currentSpeed * Time.deltaTime);
 
-
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            Application.Quit();
-        }
-
     }
 
 
