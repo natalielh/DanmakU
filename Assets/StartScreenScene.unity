@@ -1593,6 +1593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49cc83f87c75a204eb505a88ccb1d4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCollider: {fileID: 0}
   cam: {fileID: 2063636502}
   fxcam: {fileID: 1717038472}
   currentSpeed: 8
@@ -3164,7 +3165,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2df782640660a734b99bffab39570eed, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 095b2932cb6bad7469ebcc51c25d6cad, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

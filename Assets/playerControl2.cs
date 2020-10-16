@@ -6,6 +6,9 @@ using DanmakU;
 
 public class playerControl2 : MonoBehaviour {
 
+    public GameObject playerCollider;
+    PlayerCollision playerCollision;
+
     public GameObject cam;
     //public Camera camera;
 
@@ -30,6 +33,9 @@ public class playerControl2 : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         //camera = GetComponent<Camera>();
         crtfx = fxcam.GetComponent<CRTEffect>();
+
+        playerCollision = playerCollider.GetComponent<PlayerCollision>();
+
 	}
 	
 	// Update is called once per frame
@@ -64,7 +70,6 @@ public class playerControl2 : MonoBehaviour {
         }
 
 
-
         //toggle camera tv fx
         if (Input.GetKeyDown(KeyCode.P) && !fxToggleOn)
         {
@@ -77,25 +82,30 @@ public class playerControl2 : MonoBehaviour {
             fxToggleOn = false;
         }
 
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        //Get the value of the Horizontal input axis.
+        //player movement and rotation
+        //first check if player is dead, if dead, don't let them move
+        if (playerCollision.currentHealth > 0) {
 
-        float verticalInput = Input.GetAxisRaw("Vertical");
-        //Get the value of the Vertical input axis.
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+            //Get the value of the Horizontal input axis.
 
-        int toRot = 0;
-        if (Input.GetKey(KeyCode.E)) { toRot = -1; }
-        if (Input.GetKey(KeyCode.Q)) { toRot = 1; }
+            float verticalInput = Input.GetAxisRaw("Vertical");
+            //Get the value of the Vertical input axis.
 
-        transform.Rotate(0, 0, toRot * rotSpeed * Time.deltaTime, Space.Self);
+            int toRot = 0;
+            if (Input.GetKey(KeyCode.E)) { toRot = -1; }
+            if (Input.GetKey(KeyCode.Q)) { toRot = 1; }
 
-        Vector2 toMove = new Vector2(horizontalInput, verticalInput);
-        toMove.Normalize();
+            transform.Rotate(0, 0, toRot * rotSpeed * Time.deltaTime, Space.Self);
 
-        //transform.Translate(new Vector2(horizontalInput, verticalInput) * currentSpeed * Time.deltaTime, Space.Self);
-        transform.Translate(new Vector2(toMove.x, toMove.y) * currentSpeed * Time.deltaTime, Space.Self);
+            Vector2 toMove = new Vector2(horizontalInput, verticalInput);
+            toMove.Normalize();
 
-        //rb.MovePosition(rb.position + toMove * currentSpeed * Time.deltaTime);
+            //transform.Translate(new Vector2(horizontalInput, verticalInput) * currentSpeed * Time.deltaTime, Space.Self);
+            transform.Translate(new Vector2(toMove.x, toMove.y) * currentSpeed * Time.deltaTime, Space.Self);
+
+            //rb.MovePosition(rb.position + toMove * currentSpeed * Time.deltaTime);
+        }
 
     }
 

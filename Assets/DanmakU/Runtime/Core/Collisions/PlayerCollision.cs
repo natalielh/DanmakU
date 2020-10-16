@@ -9,7 +9,7 @@ using DanmakU;
 public class PlayerCollision : MonoBehaviour
 {
 
-    private int currentHealth = 6;
+    public int currentHealth = 6;
     private int maxHealth = 6;
 
     private bool isInvincible = false;
