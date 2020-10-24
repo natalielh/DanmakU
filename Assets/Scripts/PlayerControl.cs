@@ -4,7 +4,8 @@ using System.Collections;
 using JetFistGames.RetroTVFX;
 using DanmakU;
 
-public class playerControl2 : MonoBehaviour {
+public class PlayerControl : MonoBehaviour
+{
 
     public GameObject playerCollider;
     PlayerCollision playerCollision;
@@ -28,7 +29,8 @@ public class playerControl2 : MonoBehaviour {
     private CRTEffect crtfx;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
         rb = GetComponent<Rigidbody2D>();
         //camera = GetComponent<Camera>();
@@ -36,10 +38,11 @@ public class playerControl2 : MonoBehaviour {
 
         playerCollision = playerCollider.GetComponent<PlayerCollision>();
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
         //var move = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
         //transform.position += move * speed * Time.deltaTime;
@@ -58,12 +61,14 @@ public class playerControl2 : MonoBehaviour {
 
 
         //toggle camera see more
-        if (Input.GetKeyDown(KeyCode.C) && !camToggleOn) {
+        if (Input.GetKeyDown(KeyCode.C) && !camToggleOn)
+        {
             cam.transform.Translate(Vector2.up * 4, Space.Self);
             camToggleOn = true;
             print("c key was pressed");
         }
-        else if (Input.GetKeyDown(KeyCode.C) && camToggleOn) {
+        else if (Input.GetKeyDown(KeyCode.C) && camToggleOn)
+        {
             cam.transform.Translate(Vector2.up * -4, Space.Self);
             camToggleOn = false;
             print("c key was pressed");
@@ -84,7 +89,8 @@ public class playerControl2 : MonoBehaviour {
 
         //player movement and rotation
         //first check if player is dead, if dead, don't let them move
-        if (playerCollision.currentHealth > 0) {
+        if (playerCollision.currentHealth > 0)
+        {
 
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             //Get the value of the Horizontal input axis.

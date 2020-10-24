@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 1227869789}
   - component: {fileID: 1227869788}
   m_Layer: 0
-  m_Name: Press Any Key
+  m_Name: Press Space to Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1516,7 +1516,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: --[ PRESS ANY KEY ]--
+  m_Text: --[ PRESS SPACE TO START ]--
 --- !u!222 &1227869790
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -8,21 +8,26 @@ public class EnemyHealth : MonoBehaviour
 
     //https://www.youtube.com/watch?v=l11fkFoFfrg
 
-    Image healthBar;
+    public Image healthBar;
     public float maxHealth = 100.0f;
     public static float health;
+
+    Animator bossAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthBar = GetComponent<Image>();
+        //healthBar = GetComponent<Image>();
         health = maxHealth;
+        bossAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         healthBar.fillAmount = health / maxHealth;
+        bossAnimator.SetFloat("BossHealthPercentage", health / maxHealth);
+
     }
 
 
